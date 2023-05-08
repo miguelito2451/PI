@@ -3,7 +3,7 @@ const { DataTypes } = require('sequelize');
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define('recipe', {
+  sequelize.define('diets', {
     ID : {
       type: DataTypes.STRING,
       primaryKey: true
@@ -11,21 +11,6 @@ module.exports = (sequelize) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    image: {
-      type: DataTypes.STRING,
-    }, 
-    resumen: {
-      type : DataTypes.STRING,
-      allowNull: false
-    },
-    niveldeComidaSaludable : {
-      type : DataTypes.STRING
-    },
-    pasoApaso: { 
-      type: DataTypes.STRING,
-      allowNull: false
-    }
-    
+    }    
   });
 };
