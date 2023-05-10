@@ -1,9 +1,28 @@
-const { Router } = require('express');
+const express = require('express');
+const router = express.Router();
+const {postRecipe} = require('../Controllers/index');
+
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
+router.post('/Recipe', async (req, res) => {
+   const{name, image, resumen, niveldeComidaSaludable, pasoApaso }= req.body;
+    try {
+        const newRecipe = await postRecipe(name, image, resumen, niveldeComidaSaludable, pasoApaso);
+
+        return res.status(200).json(`Se creo la receta: ${newRecipe.name}`);
+    }
+    catch (error) {
+        return res.status(400).json({ error: error.message });
+   /*  try{
+        res.status(200).json({ Recipe: postRecipe(req.body.name, req.body.image, req.body.resume,
+            req.body.pasoApaso, req.body.niveldeComidaSaludable) })
+    } catch (error) {
+        return res.status(400).json({ error: error.message });
+    } */
+    }
+});
 
 
-const router = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
