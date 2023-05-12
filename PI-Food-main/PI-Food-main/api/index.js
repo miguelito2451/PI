@@ -21,8 +21,10 @@ const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
-  console.log("Base de Datos Conectada");
+
+
+conn.sync({ force: true }).then(() => { //force tira la base y la corre de nuevo.
+                                        //Alter actualiza solo lo nuevo.
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
