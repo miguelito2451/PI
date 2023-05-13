@@ -4,15 +4,15 @@ const { conn } = require('../db.js');
 
 
 const getRecipeById = async (id) => {
-    /* console.log(parseInt(id));  */
+    let str = id.slice(1)
+    console.log(parseInt(str)); 
     let  infoAPIObj = await getApi();
     let  infoAPI = infoAPIObj.results;
     let recetaBuscadaApi = infoAPI.find((receta) => 
    /*  console.log('receta :>> ', receta) */
-     receta.id == id
+     receta.id == parseInt(str)
     );
-    /* console.log('recetaBuscadaApi :>> ', recetaBuscadaApi); */
-    /* const recetaBuscadaDB = Recipe.findByPk(id) */
+    const recetaBuscadaDB = Recipe.findByPk(id) 
     if (!recetaBuscadaDB || !recetaBuscadaApi){
         return 'Receta no encontrada';
     } 

@@ -6,8 +6,7 @@ const {getRecipeById} = require('../Controllers/index');
 // Ejemplo: const authRouter = require('./auth.js');
 router.get('/recipes/:idRecipe', async (req, res) =>{
     try {
-        const {id} = req.params
-        console.log('id :>> ', id);
+        /* console.log('id :>> ', id); */
        /* console.log('req.id :>> ', req._parsedUrl.query); */
         const recipe = await getRecipeById(req._parsedUrl.query);
         return res.status(200).json({recipe});

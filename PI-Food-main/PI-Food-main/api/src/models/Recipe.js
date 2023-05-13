@@ -5,7 +5,7 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('Recipe', {
     ID : {
-      type: DataTypes.INTEGER,
+      type: DataTypes.NUMBER,
       primaryKey: true,
       autoIncrement: true
     },
