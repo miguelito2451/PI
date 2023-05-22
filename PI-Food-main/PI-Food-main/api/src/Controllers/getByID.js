@@ -9,10 +9,19 @@ const getRecipeById = async (id) => {
     let infoApi = apiData.data;
     const recetaBuscadaApi = await infoApi;
     const recetaBuscadaDB = await Recipe.findByPk(id) 
-    if (!recetaBuscadaDB || !recetaBuscadaApi){
-        return 'Receta no encontrada';
+    if (!recetaBuscadaDB ){
+        if (!recetaBuscadaApi) {
+            return "No hay Una receta con ese ID"
+        }
+        return recetaBuscadaApi;
     } 
-    return [recetaBuscadaApi, recetaBuscadaDB];     
+    if (!recetaBuscadaApi) {
+        if(!recetaBuscadaDB){
+            return "No hay Una receta con ese ID"
+        }
+      return recetaBuscadaDB;
+    }
+    /* return [recetaBuscadaApi, recetaBuscadaDB];   */   
 } 
 
 

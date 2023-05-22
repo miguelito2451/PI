@@ -1,20 +1,43 @@
-.Landing{
-    position: static;
-    width: 100%;
-    background-color: #168aad;
-    flex-direction: column-reverse;
-    /* margin: 2rem; */ 
-     display: flex; 
-    justify-content: space-around;  
-}
+@media screen {
+    .Landing{
+        background-color: #fcd5ce;
+        position: static;
+        width: 100%; 
+        display: flex; 
+        justify-content:baseline;
+    }
+    .Imagen{
+        border-radius: 2%;
+        width: 100%;
+        height: 600px; 
+        position: static;
+        margin-top: 0.5%;
+        margin-bottom: 0.5%;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        z-index: 1;
+    }
+    .Boton{ 
+        width: 15%;
+        background-color: #a3c4f3;
+        position:absolute;
+        margin-top:320px;
+        left: 200px;
+        font: oblique bold 100% cursive;
+        border-radius: 10%;
+        z-index: 2;
+        border-color:#a3c4f3
+    }
+    .Fuente{
+       /*  width: 0.1rem;
+        height: 0.1rem;  */
+        font: oblique bold 120% cursive;
+        z-index: 2;
+        position:absolute;
+        margin-left: 100px;
+        margin-top: 100px;
+        font-size: 300%;
 
-.Imagen{
-    width: 100%;
-    height:400px;
-}
 
-.Div{
-    width: 100%;
-    height: 400px;
-    background-color: beige;
+    }
 }

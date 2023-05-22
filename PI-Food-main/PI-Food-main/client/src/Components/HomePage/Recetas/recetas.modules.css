@@ -1,0 +1,13 @@
+.Recetas{
+    position: static;
+    width: 90%;
+    background-color: #3a5a40;
+    border-radius: 1rem;
+    flex-direction: row;
+    margin: 2rem;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    gap: 2rem;
+    border: 1px solid #34a0a4;
+}
